@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAppContext } from "../store/Store";
-import { Link } from "react-router-dom";
+import Layout from "../component/Layout";
 
 const Create = () => {
   const [title, setTitle] = useState("");
@@ -64,8 +64,7 @@ const Create = () => {
   }
 
   return (
-    <div>
-      <Link to="/">Home</Link>
+    <Layout>
       <form onSubmit={handleSubmit}>
         <div>
           <div>Title</div>
@@ -126,7 +125,7 @@ const Create = () => {
         </div>
         <input type="submit" value="Register Book" />
       </form>
-    </div>
+    </Layout>
   );
 };
 

@@ -1,16 +1,16 @@
 import React from "react";
 import { useAppContext } from "../store/Store";
-import { Link } from "react-router-dom";
+import Layout from "../component/Layout";
+import Book from "../component/Book";
 
 const Indez = () => {
   const store = useAppContext();
   return (
-    <div>
-      <Link to="/create">Create</Link>
+    <Layout>
       {store.items.map((item) => (
-        <div>{item.title}</div>
+        <Book key={item.id} item={item} />
       ))}
-    </div>
+    </Layout>
   );
 };
 
