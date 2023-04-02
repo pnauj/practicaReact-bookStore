@@ -5,11 +5,19 @@ import Book from "../component/Book";
 
 const Indez = () => {
   const store = useAppContext();
+
+  const booksContainers = {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "10px",
+  };
   return (
     <Layout>
-      {store.items.map((item) => (
-        <Book key={item.id} item={item} />
-      ))}
+      <div style={booksContainers}>
+        {store.items.map((item) => (
+          <Book key={item.id} item={item} />
+        ))}
+      </div>
     </Layout>
   );
 };
